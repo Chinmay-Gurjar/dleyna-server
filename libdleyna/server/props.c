@@ -153,6 +153,7 @@ void dls_prop_maps_new(GHashTable **property_map, GHashTable **filter_map)
 					FALSE, TRUE, FALSE);
 	g_hash_table_insert(f_map, DLS_INTERFACE_PROP_PATH, prop_t);
 	g_hash_table_insert(p_map, "@id", DLS_INTERFACE_PROP_PATH);
+	g_hash_table_insert(p_map, "@id", DLS_INTERFACE_PROP_ID);
 
 	/* @parentID */
 	prop_t = prv_prop_map_new("@parentID",
@@ -1386,6 +1387,9 @@ gboolean dls_props_add_object(GVariantBuilder *item_vb,
 	creator = gupnp_didl_lite_object_get_creator(object);
 	rest = gupnp_didl_lite_object_get_restricted(object);
 	path = dls_path_from_id(root_path, id);
+
+	prv_add_string_prop(item_vb, DLS_INTERFACE_PROP_ID,
+				id);
 
 	if (filter_mask & DLS_UPNP_MASK_PROP_DISPLAY_NAME)
 		prv_add_string_prop(item_vb, DLS_INTERFACE_PROP_DISPLAY_NAME,

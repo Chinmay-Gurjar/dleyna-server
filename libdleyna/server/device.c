@@ -446,8 +446,8 @@ static void prv_last_change_decode(GUPnPCDSLastChangeEntry *entry,
 				g_variant_new_uint32(PRV_CHANGED_EVENT_ADD));
 		g_variant_builder_add(
 				dict, "{sv}",
-				DLS_INTERFACE_PROP_PATH,
-				g_variant_new_string(path));
+				DLS_INTERFACE_PROP_ID,
+				g_variant_new_string(object_id));
 		g_variant_builder_add(
 				dict, "{sv}",
 				DLS_INTERFACE_PROP_UPDATE_ID,
@@ -481,8 +481,8 @@ static void prv_last_change_decode(GUPnPCDSLastChangeEntry *entry,
 							PRV_CHANGED_EVENT_DEL));
 		g_variant_builder_add(
 				dict, "{sv}",
-				DLS_INTERFACE_PROP_PATH,
-				g_variant_new_string(path));
+				DLS_INTERFACE_PROP_ID,
+				g_variant_new_string(object_id));
 		g_variant_builder_add(
 				dict, "{sv}",
 				DLS_INTERFACE_PROP_UPDATE_ID,
@@ -499,8 +499,8 @@ static void prv_last_change_decode(GUPnPCDSLastChangeEntry *entry,
 				g_variant_new_uint32(PRV_CHANGED_EVENT_DONE));
 		g_variant_builder_add(
 				dict, "{sv}",
-				DLS_INTERFACE_PROP_PATH,
-				g_variant_new_string(path));
+				DLS_INTERFACE_PROP_ID,
+				g_variant_new_string(object_id));
 		g_variant_builder_add(
 				dict, "{sv}",
 				DLS_INTERFACE_PROP_UPDATE_ID,
@@ -932,7 +932,7 @@ static void prv_build_container_update_changed_array(const gchar *root_path,
 			DLS_INTERFACE_PROP_CHANGE_TYPE,
 			g_variant_new_uint32(PRV_CHANGED_EVENT_CONTAINER));
 		g_variant_builder_add(&dict, "{sv}",
-				      DLS_INTERFACE_PROP_PATH,
+				      DLS_INTERFACE_PROP_ID,
 				      g_variant_new_string(path));
 		g_variant_builder_add(&dict, "{sv}",
 				      DLS_INTERFACE_PROP_UPDATE_ID,

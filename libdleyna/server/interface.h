@@ -58,6 +58,7 @@ enum dls_interface_type_ {
 #define DLS_INTERFACE_PROP_PARENT "Parent"
 #define DLS_INTERFACE_PROP_RESTRICTED "Restricted"
 #define DLS_INTERFACE_PROP_DISPLAY_NAME "DisplayName"
+#define DLS_INTERFACE_PROP_ID "ID"
 #define DLS_INTERFACE_PROP_TYPE "Type"
 #define DLS_INTERFACE_PROP_TYPE_EX "TypeEx"
 #define DLS_INTERFACE_PROP_CREATOR "Creator"
