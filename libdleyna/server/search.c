@@ -103,6 +103,9 @@ gchar *dls_search_translate_search_string(GHashTable *filter_map,
 			g_free(value);
 			value = g_strdup_printf("\"%s\"", id);
 			g_free(id);
+		} 
+		else {
+			goto label;
 		}
 
 		prop_map = g_hash_table_lookup(filter_map, prop);
@@ -124,6 +127,7 @@ gchar *dls_search_translate_search_string(GHashTable *filter_map,
 				       prop_map->upnp_prop_name, op, value);
 		old_end_pos = end_pos;
 
+	label:
 		g_free(value);
 		g_free(prop);
 		g_free(op);
